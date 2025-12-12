@@ -6,7 +6,7 @@ import datetime
 import os
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb+srv://Aluno:FIAP@mongodb.xno9nzb.mongodb.net/SIEM?retryWrites=true&w=majority')
+app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb+srv://Aluno:<dbpassword>@mongodb.xno9nzb.mongodb.net/SIEM?retryWrites=true&w=majority')
 mongo = PyMongo(app)
 
 CORS(app)
@@ -73,3 +73,4 @@ def deletar_evento(id):
 
 
 app.run(debug=False, host='0.0.0.0', port=4444)
+
